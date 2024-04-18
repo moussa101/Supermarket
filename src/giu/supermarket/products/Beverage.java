@@ -3,8 +3,6 @@ package giu.supermarket.products;
 public class Beverage extends GroceryProduct implements Drinkable{
 
    private SugarLevel sugarLevel ;
-    String unitOfMeasurement = "ml";
-
 
     public Beverage(String name, double price, double discount, SugarLevel a) {
         super(name, price, discount);
@@ -31,9 +29,10 @@ public class Beverage extends GroceryProduct implements Drinkable{
             return false;
         }
         Beverage o1 = (Beverage) o;
-        if (super.equals(o1)&& this.sugarLevel.equals(o1.sugarLevel)) {
+        if (super.equals(o1) && this.sugarLevel.equals(o1.sugarLevel)) {
             return true ;
-        } else {
+        }
+        else {
             return false;
         }
     }
@@ -49,7 +48,6 @@ public class Beverage extends GroceryProduct implements Drinkable{
     }
 
     public final double getActualPrice(double extra){
-
         return getPrice()-getPrice()*(( getDiscount() + extra)/100.0);
     }
 
